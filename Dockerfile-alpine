@@ -1,0 +1,46 @@
+##
+#
+# BUILD
+#   docker build --no-cache -t ideahut-springboot-3x-template-alpine . -f Dockerfile-alpine
+#
+# RUN
+#   docker run -d --name ideahut-springboot-3x-template-alpine -v <lokasi application.yml>:/apps/application.yml -v <lokasi extras>:/apps/extras/ -p 5401:5401 ideahut-springboot-3x-template-alpine
+#
+# DOCS
+#   https://www.graalvm.org/22.2/reference-manual/native-image/guides/use-native-image-maven-plugin/
+##
+
+FROM alpine as builder
+
+ENV JAVA_HOME=/java
+ENV GRAALVM_HOME=/java
+ENV MAVEN_HOME=/maven
+ENV PATH=$PATH:$MAVEN_HOME/bin:$JAVA_HOME/bin
+
+RUN apk add bash g++ make zlib-static curl gcc
+RUN apk upgrade libssl3 libcrypto3
+
+RUN wget https://download.bell-sw.com/vm/23.0.3/bellsoft-liberica-vm-openjdk17.0.10+13-23.0.3+1-linux-x64-musl.tar.gz -P /tmp/
+RUN tar -xzf /tmp/bellsoft-liberica-vm-openjdk17.0.10+13-23.0.3+1-linux-x64-musl.tar.gz -C /tmp/
+RUN mv /tmp/bellsoft-liberica-vm-openjdk17-23.0.3 $JAVA_HOME
+RUN rm -f /tmp/bellsoft-liberica-vm-openjdk17.0.10+13-23.0.3+1-linux-x64-musl.tar.gz
+
+ARG SHA=706f01b20dec0305a822ab614d51f32b07ee11d0218175e55450242e49d2156386483b506b3a4e8a03ac8611bae96395fd5eec15f50d3013d5deed6d1ee18224
+ARG MAVEN_URL=https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz
+
+RUN mkdir -p $MAVEN_HOME
+RUN curl -fsSL -o /tmp/apache-maven.tar.gz ${MAVEN_URL}
+RUN echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c -
+RUN tar -xzf /tmp/apache-maven.tar.gz -C $MAVEN_HOME --strip-components=1
+RUN rm -f /tmp/apache-maven.tar.gz
+
+WORKDIR /build
+ADD ./src/ /build/src/
+ADD ./pom.xml /build/pom.xml
+RUN $MAVEN_HOME/bin/mvn -Pnative clean package native:compile -X
+
+FROM alpine
+WORKDIR /apps
+COPY --from=builder /build/target/ideahut-springboot-3x-template-native /apps/run
+COPY --from=builder /build/target/*.so /apps/
+CMD ["/apps/run", "-Duser.dir=/apps", "-Djava.home=", "-Duser.home=/apps", "-Djava.io.tmpdir="]
