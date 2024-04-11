@@ -11,7 +11,7 @@ management:
 
 spring:
    application:
-      name: ideahut-springboot-3x-sample-native
+      name: ideahut-springboot-3x-template-native
    quartz:
       auto-startup: false
    servlet:
@@ -46,7 +46,7 @@ spring:
             audit_bean_name: auditSessionFactory_1
 
 app:
-   instanceId: ideahut-springboot-3x-sample-flux
+   instanceId: ideahut-springboot-3x-template-native
    loggingError: true
    gridLocation: "file:{user.dir}/extras/grid/**/*.json"
    messagePath: "file:{user.dir}/extras/message/"
@@ -178,7 +178,7 @@ other:
                   index: false 
              
 logging:
-   file: logs/ideahut-springboot-3x-template.log
+   file: logs/ideahut-springboot-3x-template-native.log
    pattern:
       console: '%d %p [%X{traceId}] %F\(%M:%L\) : %msg%n'
       file: '%d %p [%X{traceId}] %F\(%M:%L\) : %msg%n'

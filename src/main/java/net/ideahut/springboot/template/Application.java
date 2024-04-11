@@ -43,10 +43,6 @@ public class Application extends SpringBootServletInitializer implements Applica
 		SpringApplication application = new SpringApplication(Application.class);
 		application.setLazyInitialization(false);
 		application.setLogStartupInfo(true);
-		//application.addInitializers(new AotApplicationContextInitializer<ConfigurableApplicationContext>() {
-		//	@Override
-		//	public void initialize(ConfigurableApplicationContext applicationContext) {}
-		//});
 		application.run(args);
 	}
 	
