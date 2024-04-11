@@ -3,6 +3,7 @@
 - Template implementasi dari Ideahut Springboot 3x Library (Native).
 - Dokumen dapat dilihat di [Ideahut Springboot](https://github.com/ideahut-apps-team/ideahut-springboot-docs/)
 
+| ---      | ---       |
 | Web Server  | Tomcat  |
 | Database  | MySQL  |
 | Springboot  | 3.2.2  |
