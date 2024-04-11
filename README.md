@@ -7,8 +7,22 @@
 | ---      | ---       |
 | Web Server  | Tomcat  |
 | Database  | MySQL  |
+| Hibernate  | 6.4.1.Final  |
+| Spring  | 6.1.3  |
 | Springboot  | 3.2.2  |
 | Ideahut  | 3.2.2-0.0.4  |
+
+## Docker
+### Centos
+```bash
+docker build --no-cache -t ideahut-springboot-3x-template-centos . -f Dockerfile-centos
+docker run -d --name ideahut-springboot-3x-template-centos -v <lokasi application.yml>:/apps/application.yml -v <lokasi extras>:/apps/extras/ -p 5401:5401 ideahut-springboot-3x-template-centos
+```
+### Alpine
+```bash
+docker build --no-cache -t ideahut-springboot-3x-template-alpine . -f Dockerfile-alpine
+docker run -d --name ideahut-springboot-3x-template-alpine -v <lokasi application.yml>:/apps/application.yml -v <lokasi extras>:/apps/extras/ -p 5401:5401 ideahut-springboot-3x-template-alpine
+```
 
 ### Admin
 - `URL`  : https://localhost:5401/_
