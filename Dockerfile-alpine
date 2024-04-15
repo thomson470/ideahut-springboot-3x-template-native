@@ -15,7 +15,8 @@ FROM ideahutappsteam/alpine-jdk.17.0.10-graalvm.23.0.3-maven.3.9.6 as builder
 WORKDIR /build
 ADD ./src/ /build/src/
 ADD ./pom.xml /build/pom.xml
-RUN $MAVEN_HOME/bin/mvn -Pnative clean package native:compile
+
+RUN mvn -Pnative clean package native:compile
 
 FROM alpine
 WORKDIR /apps

@@ -59,7 +59,6 @@ import net.ideahut.springboot.util.FrameworkUtil;
  * - CacheGroupHandler
  * - CacheHandler
  * - CrudHandler
- * - ReportHandler
  * - MailHandler
  * - SysParamHandler
  * - SchedulerHandler

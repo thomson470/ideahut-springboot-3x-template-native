@@ -30,26 +30,29 @@
 		<start-class>net.ideahut.springboot.template.Application</start-class>
 		<version.exec-maven-plugin>3.2.0</version.exec-maven-plugin>
 
-		<version.ideahut-springboot>0.0.4</version.ideahut-springboot>
-
 		<version.commons-io>2.15.1</version.commons-io>
-		<version.commons-httpclient>3.1</version.commons-httpclient>
-		<version.mysql-connector-java>8.0.33</version.mysql-connector-java>
-		<version.jbcrypt>0.4</version.jbcrypt>
-		<version.jakarta.mail>2.0.1</version.jakarta.mail>
+        <version.commons-httpclient>3.1</version.commons-httpclient>
+        <version.jbcrypt>0.4</version.jbcrypt>
+        <version.jakarta.mail>2.0.1</version.jakarta.mail>
 		<version.jedis>5.0.2</version.jedis>
+		<version.apache-poi>5.2.5</version.apache-poi>
 		
 	</properties>
 
 
 	<dependencies>
-
+		
 		<!-- IDEAHUT -->
 		<dependency>
 			<groupId>net.ideahut</groupId>
-			<artifactId>ideahut-springboot-3.2.2</artifactId>
-			<version>${version.ideahut-springboot}</version>
+			<artifactId>ideahut-springboot-3x</artifactId>
+			<version>1.0.0</version>
 		</dependency>
+		<dependency>
+			<groupId>net.ideahut</groupId>
+			<artifactId>ideahut-springboot-3.2.2</artifactId>
+			<version>1.0.0</version>
+		</dependency>		
 
 
 		<!-- SPRINGBOOT -->
@@ -146,9 +149,8 @@
 
 		<!-- MYSQL -->
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>${version.mysql-connector-java}</version>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
 		</dependency>
 
 	</dependencies>
