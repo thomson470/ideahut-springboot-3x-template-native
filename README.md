@@ -14,27 +14,12 @@
 
 ## Docker
 
-### Centos
-##### Build
-```bash
-docker build --no-cache -t ideahut-springboot-3x-template-centos . -f Dockerfile-centos
-```
-##### Run
-```bash
-docker run -d \
---name ideahut-springboot-3x-template-centos \
--v <lokasi application.yml>:/apps/application.yml \
--v <lokasi extras>:/apps/extras/ \
--v <lokasi logs>:/apps/logs/ \
--p 5401:5401 \
-ideahut-springboot-3x-template-centos
-```
-
 ### Alpine
 ##### Build
 ```bash
 docker build --no-cache -t ideahut-springboot-3x-template-alpine . -f Dockerfile-alpine
 ```
+> Ukuran image sekitar 193MB
 ##### Run
 ```bash
 docker run -d \
@@ -44,6 +29,40 @@ docker run -d \
 -v <lokasi logs>:/apps/logs/ \
 -p 5401:5401 \
 ideahut-springboot-3x-template-alpine
+```
+
+### Alpaquita
+##### Build
+```bash
+docker build --no-cache -t ideahut-springboot-3x-template-alpaquita . -f Dockerfile-alpaquita
+```
+> Ukuran image sekitar 193MB
+##### Run
+```bash
+docker run -d \
+--name ideahut-springboot-3x-template-alpaquita \
+-v <lokasi application.yml>:/apps/application.yml \
+-v <lokasi extras>:/apps/extras/ \
+-v <lokasi logs>:/apps/logs/ \
+-p 5401:5401 \
+ideahut-springboot-3x-template-alpaquita
+```
+
+### Centos
+##### Build
+```bash
+docker build --no-cache -t ideahut-springboot-3x-template-centos . -f Dockerfile-centos
+```
+> Ukuran image sekitar 417MB
+##### Run
+```bash
+docker run -d \
+--name ideahut-springboot-3x-template-centos \
+-v <lokasi application.yml>:/apps/application.yml \
+-v <lokasi extras>:/apps/extras/ \
+-v <lokasi logs>:/apps/logs/ \
+-p 5401:5401 \
+ideahut-springboot-3x-template-centos
 ```
 
 ### Admin
