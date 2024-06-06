@@ -3,12 +3,6 @@ server:
       
 debug: false
 
-management:
-   endpoints:
-      web:
-         exposure:
-            include: "*"
-
 spring:
    application:
       name: ideahut-springboot-3x-template
@@ -46,11 +40,8 @@ spring:
             audit_bean_name: auditSessionFactory_1
 
 app:
-   instanceId: ideahut-springboot-3x-template
    loggingError: true
-   gridLocation: "file:{user.dir}/extras/grid/**/*.json"
    messagePath: "file:{user.dir}/extras/message/"
-   reportPath: "file:{user.dir}/extras/report/"
    
    cors:
       "Access-Control-Allow-Credentials": "true"
@@ -135,6 +126,10 @@ app:
          "mail.debug": "true"
          "mail.smtp.ssl.protocols": "TLSv1.2"
 
+   grid:
+      location: "file:{user.dir}/extras/grid/**/*.json"
+      #definition: "file:{user.dir}/extras/grid/grid.def"
+
    admin:
       configFile: "file:{user.dir}/extras/admin/config.json"
       credentialFile: "file:{user.dir}/extras/admin/credential-bcrypt.json"
@@ -196,3 +191,4 @@ logging:
             jackson:
                dataformat:
                   xml: OFF
+

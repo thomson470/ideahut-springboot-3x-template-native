@@ -31,6 +31,8 @@
   }, {
     "pattern":"\\QMETA-INF/services/com.fasterxml.jackson.databind.Module\\E"
   }, {
+    "pattern":"\\QMETA-INF/services/io.jsonwebtoken.io.Serializer\\E"
+  }, {
     "pattern":"\\QMETA-INF/services/jakarta.activation.spi.MailcapRegistryProvider\\E"
   }, {
     "pattern":"\\QMETA-INF/services/jakarta.activation.spi.MimeTypeRegistryProvider\\E"
@@ -243,11 +245,9 @@
   }, {
     "pattern":"java.base:\\Qjava/lang/reflect/Modifier.class\\E"
   }, {
-    "pattern":"java.base:\\Qjdk/internal/icu/impl/data/icudt67b/nfc.nrm\\E"
-  }, {
-    "pattern":"java.base:\\Qjdk/internal/icu/impl/data/icudt67b/uprops.icu\\E"
-  }, {
     "pattern":"java.base:\\Qjdk/internal/icu/impl/data/icudt72b/nfc.nrm\\E"
+  }, {
+    "pattern":"java.base:\\Qjdk/internal/icu/impl/data/icudt72b/nfkc.nrm\\E"
   }, {
     "pattern":"java.base:\\Qjdk/internal/icu/impl/data/icudt72b/uprops.icu\\E"
   }, {
@@ -256,6 +256,8 @@
     "pattern":"jdk.internal.vm.compiler:\\Qorg/graalvm/compiler/hotspot/HotSpotBackend.class\\E"
   }, {
     "pattern":"jdk.internal.vm.compiler:\\Qorg/graalvm/compiler/hotspot/replacements/ClassGetHubNode.class\\E"
+  }, {
+    "pattern":"jdk.internal.vm.compiler:\\Qorg/graalvm/compiler/hotspot/replacements/DigestBaseSnippets.class\\E"
   }, {
     "pattern":"jdk.internal.vm.compiler:\\Qorg/graalvm/compiler/hotspot/replacements/HotSpotAllocationSnippets.class\\E"
   }, {
@@ -332,6 +334,8 @@
     "pattern":"jdk.internal.vm.compiler:\\Qorg/graalvm/compiler/replacements/gc/G1WriteBarrierSnippets.class\\E"
   }, {
     "pattern":"jdk.jfr:\\Qjdk/jfr/internal/query/view.ini\\E"
+  }, {
+    "pattern":"org.graalvm.word:\\Qorg/graalvm/word/LocationIdentity.class\\E"
   }]},
   "bundles":[{
     "name":"com.mysql.cj.LocalizedErrorMessages",

@@ -66,6 +66,12 @@
     "interfaces":["net.bytebuddy.dynamic.loading.ClassInjector$UsingLookup$MethodHandles$Lookup"]
   },
   {
+    "interfaces":["net.bytebuddy.utility.JavaModule$Module"]
+  },
+  {
+    "interfaces":["net.bytebuddy.utility.JavaModule$Resolver"]
+  },
+  {
     "interfaces":["net.ideahut.springboot.template.repo.AutoGenStrIdHardDelRepo","org.springframework.data.repository.Repository","org.springframework.transaction.interceptor.TransactionalProxy","org.springframework.aop.framework.Advised","org.springframework.core.DecoratingProxy"]
   },
   {

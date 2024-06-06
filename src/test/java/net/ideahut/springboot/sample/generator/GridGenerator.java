@@ -5,8 +5,8 @@ import java.io.File;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import net.ideahut.springboot.grid.GridTool;
-import net.ideahut.springboot.template.Application;
+import net.ideahut.springboot.sample.Application;
+import net.ideahut.springboot.tool.GridTool;
 
 public class GridGenerator {
 

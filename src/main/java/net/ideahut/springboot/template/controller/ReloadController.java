@@ -25,10 +25,8 @@ public class ReloadController {
 	
 	@Autowired
 	private DataMapper dataMapper;
-	@Autowired(required = false)
+	@Autowired
 	private AdminHandler adminHandler;
-	
-	
 	
 	@GetMapping("/options")
 	public Result options() {
